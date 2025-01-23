@@ -1,0 +1,9 @@
+{
+  "type": "module",
+  "dependencies": {
+    "modularity-metrics": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2"
+  }
+}
