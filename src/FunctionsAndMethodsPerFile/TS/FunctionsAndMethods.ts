@@ -62,13 +62,12 @@ const asyncArrowFunction = async (arg : ExampleType) => {
 };
 
 
-const functionName = 'computedMethod';
-const objWithComputedFunction = {
-    async * [functionName](arg : ExampleType) {
+const computedMethodName = 'computedMethod';
+const objWithComputedMethod = {
+    async * [computedMethodName](arg : ExampleType) {
         return arg;
     }
 };
-
 
 
 const objBound = {
@@ -78,7 +77,6 @@ const objBound = {
     }
 };
 
-// Should we catch this ???
 const unboundGetX = objBound.getX;
 const boundGetX = unboundGetX.bind(objBound);
 

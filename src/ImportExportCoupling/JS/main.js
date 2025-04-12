@@ -1,8 +1,9 @@
-// ES6 Module Imports
-import moduleA from './moduleA/moduleA.js';
-import moduleB from './moduleA/moduleB/moduleB.js';
+import { sum } from './es6-module';
+const { multiply } = require('./commonjs-module');
 
-// CommonJS Module Import
-const moduleC = require('./moduleA/moduleB/moduleC/moduleC.js');
+export function calculate(a, b) {
+    return sum(a, b) + multiply(a, b);
+}
 
-console.log(moduleA, moduleB, moduleC);
+import not_import from './non-existent-import'
+const not_require = require('./non-existent-require')
