@@ -13,16 +13,16 @@ class Car {
 class Garage {
     constructor() {
         // Llamadas a métodos de instancia
-        this.parkedCar = new Car();
-        console.log("Desde propiedad:");
+        this.parkedCar = new Car();                 // ✔
+        // console.log("Desde propiedad:");
         this.parkedCar.on();                      // ✔ Desde propiedad
-
+        //
         // console.log("Instancia directa:");
-        // new Car().on();                            // ✔ Instancia directa
+        new Car().on();                            // ✔ ✔ Instancia directa
 
         // console.log("Desde variable:");
-        // const myCar = new Car();
-        // myCar.on();                              // Desde variable
+        const myCar = new Car();              // ✔
+         myCar.on();                              // ✔ Desde variable
         //
         // console.log("Clase en variable:");
         // const ClaseCar = Car;
@@ -36,7 +36,7 @@ class Garage {
         //
         // // Llamadas a métodos estáticos
         // console.log("Directo:");
-        // Car.on();                                  // Directo
+        Car.on();                                  // ✔ Directo
 
         // console.log("Variable clase:");
         // const type = Car;
@@ -46,7 +46,7 @@ class Garage {
         // this.parkedCar.constructor.on();           // Desde constructor (low priority)
 
         // console.log("Corchetes:");
-        // Car['on']();                               // Corchetes (Cuando es un string duro, considerar)
+        Car['on']();                               // ✔ Corchetes (Cuando es un string duro, considerar)
 
         // console.log("Nombre dinámico:");
         // const metodo = "on";
