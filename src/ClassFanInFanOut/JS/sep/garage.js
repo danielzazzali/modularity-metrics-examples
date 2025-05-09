@@ -13,18 +13,16 @@ class Car {
 class Garage {
     constructor() {
         // Llamadas a métodos de instancia
-        this.parkedCar = new Car();                 // ✔
-        // console.log("Desde propiedad:");
-        this.parkedCar.on();                      // ✔ Desde propiedad
-        //
-        // console.log("Instancia directa:");
-        new Car().on();                            // ✔ ✔ Instancia directa
+        this.parkedCar = new Car();                 // ✔ Constructor
 
-        // console.log("Desde variable:");
-        const myCar = new Car();              // ✔
+        this.parkedCar.on();                      // ✔ Desde propiedad
+
+        new Car().on();                            // ✔ ✔ Instancia directa (Constructor and method)
+
+
+        const myCar = new Car();              // ✔ Constructor
          myCar.on();                              // ✔ Desde variable
-        //
-        // console.log("Clase en variable:");
+
         // const ClaseCar = Car;
         // new ClaseCar().on();                       // Clase en variable (low priority)
         //
