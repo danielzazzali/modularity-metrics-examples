@@ -9,7 +9,7 @@ const Logger = class {}
 
 // Class as property with literal string (✔)
 const classes_ = {
-    ['LiteralClass']: class {}
+    ['LiteralClassName']: class {}
 }
 
 // Anonymous class in object property (✔...) reference as 'utils.Formatter'
