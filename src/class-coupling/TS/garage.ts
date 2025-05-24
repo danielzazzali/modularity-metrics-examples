@@ -1,27 +1,16 @@
-class Car {
-    // Método de instancia
-    on() {
-        console.log("Llamada a método de instancia: on()");
-    }
-
-    // Método estático
-    static on() {
-        console.log("Llamada a método estático: on()");
-    }
-}
-
 class Garage {
+    private garage: Garage;
+
     constructor() {
         // Llamadas a métodos de instancia
-        this.parkedCar = new Car();                 // ✔ Constructor
+        this.garage = new Garage();                 // ✔ Constructor
 
-        this.parkedCar.on();                      // ✔ Desde propiedad
+        this.garage.open();                      // ✔ Desde propiedad
 
-        new Car().on();                            // ✔ ✔ Instancia directa (Constructor and method)
+        new Garage().open();                            // ✔ ✔ Instancia directa (Constructor and method)
 
-
-        const myCar = new Car();              // ✔ Constructor
-         myCar.on();                              // ✔ Desde variable
+        const myGarage = new Garage();              // ✔ Constructor
+        myGarage.open();                              // ✔ Desde variable
 
         // const ClaseCar = Car;
         // new ClaseCar().on();                       // Clase en variable (low priority)
@@ -34,7 +23,7 @@ class Garage {
         //
         // // Llamadas a métodos estáticos
         // console.log("Directo:");
-        Car.on();                                  // ✔ Directo
+        Garage.open();                                  // ✔ Directo
 
         // console.log("Variable clase:");
         // const type = Car;
@@ -44,7 +33,7 @@ class Garage {
         // this.parkedCar.constructor.on();           // Desde constructor (low priority)
 
         // console.log("Corchetes:");
-        Car['on']();                               // ✔ Corchetes (Cuando es un string duro, considerar)
+        Garage['open']();                               // ✔ Corchetes (Cuando es un string duro, considerar)
 
         // console.log("Nombre dinámico:");
         // const metodo = "on";
@@ -57,6 +46,7 @@ class Garage {
         // console.log("Operador coma:");
         // (0, Car.on)();                             // Operador coma (low priority)
     }
-}
 
-new Garage();
+    open(){}
+    static open(){}
+}
