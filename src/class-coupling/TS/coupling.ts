@@ -1,14 +1,15 @@
 class Garage {
+    private car: Car;
     constructor() {
         // Llamadas a métodos de instancia
-        this.garage = new Garage();                 // ✔ Constructor
+        this.car = new Car();                 // ✔ Constructor
 
-        this.garage.open();                      // ✔ Desde propiedad
+        this.car.start();                      // ✔ Desde propiedad
 
-        new Garage().open();                            // ✔ ✔ Instancia directa (Constructor and method)
+        new Car().start();                            // ✔ ✔ Instancia directa (Constructor and method)
 
-        const myGarage = new Garage();              // ✔ Constructor
-        myGarage.open();                              // ✔ Desde variable
+        const myCar = new Car();              // ✔ Constructor
+        myCar.start();                              // ✔ Desde variable
 
         // const ClaseCar = Car;
         // new ClaseCar().on();                       // Clase en variable (low priority)
@@ -21,7 +22,7 @@ class Garage {
         //
         // // Llamadas a métodos estáticos
         // console.log("Directo:");
-        Garage.open();                                  // ✔ Directo
+        Car.startStatic();                                  // ✔ Directo
 
         // console.log("Variable clase:");
         // const type = Car;
@@ -31,7 +32,7 @@ class Garage {
         // this.parkedCar.constructor.on();           // Desde constructor (low priority)
 
         // console.log("Corchetes:");
-        Garage['open']();                               // ✔ Corchetes (Cuando es un string duro, considerar)
+        Car['startStatic']();                               // ✔ Corchetes (Cuando es un string duro, considerar)
 
         // console.log("Nombre dinámico:");
         // const metodo = "on";
@@ -44,7 +45,10 @@ class Garage {
         // console.log("Operador coma:");
         // (0, Car.on)();                             // Operador coma (low priority)
     }
+}
 
-    open(){}
-    static open(){}
+class Car {
+    constructor() {}
+    start() {}
+    static startStatic() {}
 }
