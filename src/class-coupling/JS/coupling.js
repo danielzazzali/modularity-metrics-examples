@@ -46,9 +46,12 @@ class Garage {
     }
 }
 
-
 class Car {
-    constructor() {}
-    start() {}
-    static startStatic() {}
+    // Se sobreescribe el metodo start, aunque el nodo AST es distinto!!!
+    start(){console.log(2)}
+    static start() {console.log(3)}
 }
+
+new Car().start(1);
+new Car().start();
+Car.start();
