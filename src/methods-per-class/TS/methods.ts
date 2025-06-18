@@ -8,9 +8,6 @@ class MyClass {
     // Method with string literal as name
     ['stringLiteral']() {}
 
-    // Computed property name method (using Symbol)
-    [Symbol.iterator]() {}
-
     // Async instance method
     async asyncMethod() {}
 
@@ -39,15 +36,13 @@ class MyClass {
     static #privateStaticMethod() {}
 
     // Private getter
-    // @ts-ignore
-    get #secret() {}
+    get #secret() {return null}
 
     // Private setter
     set #secret(v) {}
 
     // Getter method
-    // @ts-ignore
-    get value() {}
+    get value() {return null}
 
     // Setter method
     set value(v) {}

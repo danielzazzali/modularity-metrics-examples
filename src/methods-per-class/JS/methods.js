@@ -26,9 +26,6 @@ class MyClass {
     // Numeric literal method name
     '123'() {}
 
-    // Computed property name with template expression
-    [ `computed_${'Name'}` ]() {}
-
     // Private instance method
     #privateMethod() {}
 
@@ -58,28 +55,4 @@ class MyClass {
 
     // Static named function expression as class field
     static staticFieldFunction = function namedStaticFn() {};
-}
-
-function computeKey() {
-
-}
-
-class C {
-    // 1. Bloque estático (StaticBlock) — siempre se filtra
-    static {
-        console.log('inicialización');
-    }
-
-    // 2. Miembro computado con clave NO literal — se descarta porque la key no es StringLiteral/NumericLiteral
-    [Symbol.iterator]() {
-        // ...
-    }
-
-    // 3. Miembro computado con expresión dinámica — tampoco se guarda
-    ['computeKey']() {
-        // ...
-    }
-
-    // 6. Propiedad estática computada sin literal — se filtra igual que en (2)
-    static [dynamicName] = 123;
 }
